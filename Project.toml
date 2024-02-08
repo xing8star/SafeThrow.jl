@@ -1,0 +1,4 @@
+name = "SafeThrow"
+uuid = "94fead55-380b-4cb9-a752-d2f75d1823c8"
+authors = ["xing8star <xing0star@live.hk>"]
+version = "0.1.0"
