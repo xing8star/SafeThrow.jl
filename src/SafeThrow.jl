@@ -16,7 +16,12 @@ end
 function safefunction!(x::Expr)
     if safethrow(x.args[2])
         if x.head==:function && x.args[1].head==:call
-            insert!(x.args[1].args,2,Expr(:(::),Expr(:curly,:Val,QuoteNode(:safe))))
+            position=if x.args[1].args[2].head==:parameters
+                3
+            else
+                2
+            end
+            insert!(x.args[1].args,position,Expr(:(::),Expr(:curly,:Val,QuoteNode(:safe))))
         end
         return true
     end

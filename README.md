@@ -3,11 +3,11 @@ Avoid to use try/catch in Julia
 ## Installation
 
 ```julia-repl
-(@v1.10) pkg> add https://gitee.com/abaraba/safethrow.jjl
+(@v1.10) pkg> add https://gitee.com/abaraba/safethrow.jl
 ```
 
 ## Example
-```julia
+```julia-repl
 julia> using SafeThrow
 julia> @safefunction function abc(a::Int,c)
     local d=1
